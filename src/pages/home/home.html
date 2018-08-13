@@ -1,0 +1,53 @@
+<!--aqui conteudo do cabeçalho -->
+<ion-header>
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Fipe Table</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<!--aqui vai o conteudo principal de cada página-->
+<ion-content padding>
+  <div class="form-container">
+    <h3 class="form-container__title">
+        <ion-icon ios="ios-car" md="md-car"></ion-icon>
+        Consulta de Carros e Utilitários pequenos
+    </h3>
+    <hr class="form-container__divisor"/>
+    <p class="form-container__instrucoes">
+       Informe primeiro a marca do veículo e depois o modelo e o ano modelo. 
+    </p>
+    <div class="form-container__form-group">
+        <select class="form-container__form-group__select" [(ngModel)]="marcaId" (change)="carregarModelos()">
+            <option [ngValue]="undefined" selected>Selecione a marca do veiculo</option>
+            <option *ngFor="let marca of marcas" [value]="marca.id">{{ marca.name }}</option>
+        </select>
+    </div>
+    <div class="form-container__form-group">
+        <select class="form-container__form-group__select" [(ngModel)]="modeloId" (change)="carregarVeiculos()" [disabled]="activeModelos()">
+            <option [ngValue]="undefined" selected>Selecione o modelo do veiculo</option>
+            <option *ngFor="let modelo of modelos" [value]="modelo.id">{{ modelo.name }}</option>
+        </select>
+    </div>
+    <div class="form-container__form-group">
+        <select class="form-container__form-group__select" [(ngModel)]="veiculoId" (change)="cleanRelatorioCarro()" [disabled]="activeVeiculos()">
+            <option [ngValue]="undefined" selected>Selecione o ano e modelo do veiculo</option>
+            <option *ngFor="let veiculo of veiculos" [value]="veiculo.id">{{ veiculo.name }}</option>
+        </select>
+    </div>
+    <div class="form-container__form-group">
+        <input class="form-container__form-group__submit" type="submit" value="pesquisar" (click)="gerarRelatorioCarro()" [disabled]="activeSubmit()"/>
+    </div>
+    </div>
+    <ul class="relatorio-carro" *ngIf="showRelatorioCarro()">
+        <li class="relatorio-carro__item">Mês de referência: {{ carro.referencia }}</li>
+        <li class="relatorio-carro__item">Código Fipe: {{ carro.fipe_codigo }}</li>
+        <li class="relatorio-carro__item">Marca: {{ carro.marca }}</li>
+        <li class="relatorio-carro__item">Modelo: {{ carro.name }}</li>
+        <li class="relatorio-carro__item">Ano: {{ carro.ano_modelo }}</li>
+        <li class="relatorio-carro__item">Preço Médio: {{ carro.preco  }}</li>
+    </ul>
+</ion-content>

@@ -1,0 +1,78 @@
+main {
+    background: #8ec643;
+    margin: 0;
+    padding: 20px;
+    h1 {
+        color: #fff;
+        font-size: 2rem;
+        margin: auto;
+    }
+    
+}
+
+.form-container {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 1rem;
+}
+
+.form-container__title {
+    background: #8ec643;
+    color: #fff;
+    margin: auto;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.form-container__divisor {
+    border-color: rgba(0, 0, 0, 0.2);
+    border-width: 0.2px;
+    margin: 1rem auto;
+    width: 95%;
+}
+
+.form-container__instrucoes {
+    margin: auto;
+    width: 95%;
+}
+
+.form-container__form-group {
+    margin: 1rem auto;
+    width: 95%;
+}
+
+.form-container__form-group__select {
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+}
+
+.form-container__form-group__select:disabled {
+    cursor: no-drop;
+    opacity: 0.8;
+}
+
+.form-container__form-group__submit {
+    background: #8ec643;
+    border-width: 0px;
+    color: #fff;
+    cursor: pointer;
+    height: 40px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.form-container__form-group__submit:disabled {
+    cursor: no-drop;
+    opacity: 0.8;
+}
+
+.relatorio-carro {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 1rem;
+}
+
+.relatorio-carro__item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+}
