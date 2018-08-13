@@ -8,8 +8,7 @@ import { Carro } from './carro.model';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
-  styleUrl: 'home.scss'
+  templateUrl: 'home.html'
 })
 export class HomePage implements OnInit {
   

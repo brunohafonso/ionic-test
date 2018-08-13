@@ -7,8 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 
 @Component({
-  templateUrl: 'app.html',
-  styleUrl: 'app.scss' 
+  templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
